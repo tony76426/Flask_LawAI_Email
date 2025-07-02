@@ -28,7 +28,7 @@ def send_email():
     msg['Subject'] = f"📨 法律意見書諮詢 - {name}"
     msg['From'] = GMAIL_ACCOUNT
     msg['To'] = GMAIL_ACCOUNT
-    msg.set_content(f"""以下為用戶聯絡資訊：
+    msg.set_content(f"""以下為用戶聯絡資訊:
 
 姓名: {name}
 電話: {phone}
@@ -49,4 +49,4 @@ LINE ID: {line_id}
         return jsonify({"error": "Email 發送失敗"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
